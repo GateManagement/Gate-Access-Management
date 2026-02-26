@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Gate_Access_Management.Models;
 
@@ -19,19 +19,23 @@ public class User
     public string LastName { get; set; } = string.Empty;
 
     [Required]
+    [DataType(DataType.PhoneNumber)]
     [Phone]
     [Display(Name = "Phone Number")]
     public string PhoneNumber { get; set; } = string.Empty;
 
-    [StringLength(100)] public string? Address { get; set; }
+    [StringLength(100)]
+    [Display(Name = "Address")]
+    public string? Address { get; set; }
 
-    [StringLength(50)] public string? State { get; set; }
+    [StringLength(50)]
+    [Display(Name = "State")]
+    public string? State { get; set; }
 
-    [StringLength(10)]
-    [Display(Name = "Zip Code")]
-    public string? ZipCode { get; set; }
-
-    [EmailAddress] [StringLength(100)] public string? Email { get; set; }
+    [EmailAddress]
+    [Display(Name = "Email")]
+    [StringLength(100)]
+    public string? Email { get; set; }
 
     [Required]
     [DataType(DataType.Password)]
@@ -41,6 +45,12 @@ public class User
     [DataType(DataType.DateTime)]
     [Display(Name = "Created On")]
     public DateTime CreatedOn { get; set; } = DateTime.Now;
+
+    [DataType(DataType.DateTime)]
+    [Display(Name = "Vacated On")]
+    public DateTime? VacatedOn { get; set; }
+
+    [Display(Name = "Is Deleted")] public bool IsUserDeleted { get; set; } = false;
 
     [DataType(DataType.DateTime)]
     [Display(Name = "Modified On")]
@@ -55,4 +65,6 @@ public class User
     public DateTime? LastUserPayment { get; set; }
 
     [Display(Name = "Is Disabled")] public bool IsDisabled { get; set; } = false;
+
+    public ICollection<Garage> Garages { get; set; } = new List<Garage>();
 }
