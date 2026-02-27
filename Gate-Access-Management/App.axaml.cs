@@ -1,9 +1,9 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using System.Linq;
 using Avalonia.Markup.Xaml;
+using Gate_Access_Management.Database;
 using Gate_Access_Management.ViewModels;
 using Gate_Access_Management.Views;
 
@@ -18,6 +18,12 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
+        // Ensure the database is created
+        using (var context = new AppDbContext())
+        {
+            context.Database.EnsureCreated();
+        }
+
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             // Avoid duplicate validations from both Avalonia and the CommunityToolkit. 

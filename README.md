@@ -1,5 +1,5 @@
 # Gate Access Management
-This a garage storage management application with the ability to manage users, garages, as well as activity logging and much more
+This a garage storage management application with the ability to manage users, garages, as well as activity logging, active reporting, and much more!
 
 ## Getting Started
 In order to start developing for this program, follow these steps
@@ -25,3 +25,11 @@ NOTE: You will be doing this for every set of changes made. Changes should be re
 5. Get the approval of our QA Tester
 6. Merge your changes into the "main" branch
 
+## Release Notes - Code Milestone 1
+TL;DR: We have setup our essential classes that are needed for the project, have implemented a database solution for our local storage needs, and have build the basic structure for front end.
+1. Implemented the basic/essential classes needed to layout the structure for the project
+2. Picked a framework that is going to scale to our needs.
+3. Setup a database ORM (Entity Framework Core) that will both help us manage the database and inter-op with our code base.
+4. Laid out the schema for our database
+5. Setup the essential structure for the frontend of our program.
+6. Created modularity with the frontend in order to facilitate any future needs that might show up in the future.
