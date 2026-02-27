@@ -1,0 +1,13 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Gate_Access_Management.ViewModels.Pages.Garages"
+             x:Class="Gate_Access_Management.Views.Pages.Garages.GarageCreateView"
+             x:DataType="vm:GarageCreateViewModel">
+
+    <TextBlock Text="GarageCreateView"
+               FontSize="56"
+               FontWeight="SemiBold"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center" />
+
+</UserControl>

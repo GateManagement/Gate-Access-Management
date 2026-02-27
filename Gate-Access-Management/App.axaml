@@ -2,14 +2,61 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="Gate_Access_Management.App"
              xmlns:local="using:Gate_Access_Management"
-             RequestedThemeVariant="Default">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+             RequestedThemeVariant="Dark">
 
+
+    <!-- View Mapping -->
     <Application.DataTemplates>
-        <local:ViewLocator/>
+        <local:ViewLocator />
     </Application.DataTemplates>
-  
+
+
+    <!-- Global Resources -->
+    <Application.Resources>
+    </Application.Resources>
+
+
+    <!-- Global Styles -->
     <Application.Styles>
         <FluentTheme />
+
+        <!-- Navigation Buttons -->
+        <Style Selector="ToggleButton.ShellNavigationButton">
+            <Setter Property="Width" Value="250" />
+            <Setter Property="Height" Value="90" />
+            <Setter Property="FontSize" Value="32" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Background" Value="#3A3A3A" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+
+        <Style Selector="ToggleButton.ShellNavigationButton:pointerover">
+            <Setter Property="Background" Value="#4A4A4A" />
+        </Style>
+
+        <Style Selector="ToggleButton.ShellNavigationButton:checked">
+            <Setter Property="BorderThickness" Value="3" />
+            <Setter Property="BorderBrush" Value="#2D6CDF" />
+            <Setter Property="Background" Value="#2F2F2F" />
+        </Style>
+        
+        <!-- Gate Buttons -->
+        <Style Selector="Button.GateButton">
+            <Setter Property="Width" Value="220" />
+            <Setter Property="Height" Value="70" />
+            <Setter Property="FontSize" Value="28" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Background" Value="#141414" />
+            <Setter Property="BorderBrush" Value="#E6E6E6" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+
+        <Style Selector="Button.GateButton:pointerover">
+            <Setter Property="Background" Value="#1E1E1E" />
+        </Style>
     </Application.Styles>
 </Application>

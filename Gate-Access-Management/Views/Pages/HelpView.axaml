@@ -1,0 +1,53 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Gate_Access_Management.ViewModels.Pages"
+             x:Class="Gate_Access_Management.Views.Pages.HelpView"
+             x:DataType="vm:HelpViewModel">
+
+    <Grid RowDefinitions="Auto,*" Margin="20">
+
+        <!-- HEADER BAR -->
+        <Grid Grid.Row="0"
+              ColumnDefinitions="*,*,*"
+              VerticalAlignment="Center"
+              Margin="0,0,0,16">
+
+            <!-- LEFT SLOT -->
+            <StackPanel Grid.Column="0"
+                        Orientation="Horizontal"
+                        Spacing="10"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center">
+            </StackPanel>
+
+            <!-- CENTER TITLE -->
+            <TextBlock Grid.Column="1"
+                       Text="Help"
+                       FontSize="56"
+                       FontWeight="SemiBold"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center" />
+
+            <!-- RIGHT SLOT -->
+            <StackPanel Grid.Column="2"
+                        Orientation="Horizontal"
+                        Spacing="10"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center">
+
+            </StackPanel>
+        </Grid>
+
+        <!-- MAIN CONTENT -->
+        <Border Grid.Row="1"
+                Background="#141414"
+                BorderBrush="#E6E6E6"
+                BorderThickness="2"
+                CornerRadius="14"
+                Padding="24">
+
+            <!-- Page stuff here -->
+
+        </Border>
+    </Grid>
+</UserControl>
