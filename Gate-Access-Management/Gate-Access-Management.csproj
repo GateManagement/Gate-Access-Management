@@ -28,4 +28,26 @@
         </PackageReference>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.3" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Views\Pages\Garages\GarageCreateView.axaml.cs">
+        <DependentUpon>GarageCreateView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\Pages\Users\UserCreateView.axaml.cs">
+        <DependentUpon>UserCreateView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\Pages\Garages\GarageListView.axaml.cs">
+        <DependentUpon>GaragesView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\Pages\Users\UserListView.axaml.cs">
+        <DependentUpon>UsersView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\Pages\Users\UserHostView.axaml.cs">
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
 </Project>
