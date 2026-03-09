@@ -1,0 +1,38 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Gate_Access_Management.ViewModels.Pages.Reports"
+             x:Class="Gate_Access_Management.Views.Pages.Reports.ReportOptionsView"
+             x:DataType="vm:ReportOptionsViewModel">
+
+    <Grid HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          RowDefinitions="Auto,Auto"
+          ColumnDefinitions="Auto,Auto"
+          RowSpacing="20"
+          ColumnSpacing="20">
+
+        <Button Grid.Row="0"
+                Grid.Column="0"
+                Classes="OptionButton"
+                Content="Log Report"
+                Command="{Binding ShowLogsCommand}" />
+
+        <Button Grid.Row="0"
+                Grid.Column="1"
+                Classes="OptionButton"
+                Content="Rental Report"
+                Command="{Binding ShowRentalsCommand}" />
+
+        <Button Grid.Row="1"
+                Grid.Column="0"
+                Classes="OptionButton"
+                Content="Tenant Report"
+                Command="{Binding ShowTenantsCommand}" />
+
+        <Button Grid.Row="1"
+                Grid.Column="1"
+                Classes="OptionButton"
+                Content="Unit Report"
+                Command="{Binding ShowUnitsCommand}" />
+    </Grid>
+</UserControl>

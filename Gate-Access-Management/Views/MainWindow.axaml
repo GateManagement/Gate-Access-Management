@@ -1,20 +1,58 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:Gate_Access_Management.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Gate_Access_Management.Views.MainWindow"
-        x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="Gate_Access_Management">
+        x:DataType="vm:ShellViewModel"
+        Width="1366" Height="768"
+        MinWidth="1366" MinHeight="768"
+        Title="Gate Access Management">
 
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
+    <Grid ColumnDefinitions="Auto,*">
+        <Border Grid.Column="0"
+                Background="#181818"
+                BorderBrush="#2A2A2A"
+                BorderThickness="0,0,1,0"
+                Padding="25">
+            <StackPanel Spacing="15">
+                <ToggleButton Classes="ShellToggleButton"
+                              Content="Logs"
+                              IsChecked="{Binding IsLogsSelected, Mode=OneWay}"
+                              Command="{Binding ShowLogsCommand}" />
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <ToggleButton Classes="ShellToggleButton"
+                              Content="Tenants"
+                              IsChecked="{Binding IsTenantsSelected, Mode=OneWay}"
+                              Command="{Binding ShowTenantsCommand}" />
 
+                <ToggleButton Classes="ShellToggleButton"
+                              Content="Units"
+                              IsChecked="{Binding IsUnitsSelected, Mode=OneWay}"
+                              Command="{Binding ShowUnitsCommand}" />
+
+                <ToggleButton Classes="ShellToggleButton"
+                              Content="Gate"
+                              IsChecked="{Binding IsGateSelected, Mode=OneWay}"
+                              Command="{Binding ShowGateCommand}" />
+
+                <ToggleButton Classes="ShellToggleButton"
+                              Content="Reports"
+                              IsChecked="{Binding IsReportsSelected, Mode=OneWay}"
+                              Command="{Binding ShowReportsCommand}" />
+
+                <ToggleButton Classes="ShellToggleButton"
+                              Content="Setup"
+                              IsChecked="{Binding IsSetupSelected, Mode=OneWay}"
+                              Command="{Binding ShowSetupCommand}" />
+
+                <ToggleButton Classes="ShellToggleButton"
+                              Content="Help"
+                              IsChecked="{Binding IsHelpSelected, Mode=OneWay}"
+                              Command="{Binding ShowHelpCommand}" />
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Column="1" Background="#121212" Padding="16, 0, 16, 16">
+            <ContentControl Content="{Binding CurrentPage}" />
+        </Border>
+    </Grid>
 </Window>

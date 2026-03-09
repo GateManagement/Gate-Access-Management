@@ -1,0 +1,13 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Gate_Access_Management.ViewModels.Pages.Tenants"
+             x:Class="Gate_Access_Management.Views.Pages.Tenants.TenantListView"
+             x:DataType="vm:TenantListViewModel">
+
+    <TextBlock Text="TenantListView"
+               FontSize="56"
+               FontWeight="SemiBold"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center" />
+
+</UserControl>
