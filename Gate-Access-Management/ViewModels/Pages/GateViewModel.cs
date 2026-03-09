@@ -5,6 +5,8 @@ namespace Gate_Access_Management.ViewModels.Pages;
 
 public partial class GateViewModel : ViewModelBase
 {
+    public override string PageTitle => "Gate";
+    
     [RelayCommand]
     private void OpenEntryGate()
     {

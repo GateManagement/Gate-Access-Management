@@ -4,11 +4,11 @@
              x:Class="Gate_Access_Management.Views.Pages.LogsView"
              x:DataType="vm:LogsViewModel">
 
-    <Grid RowDefinitions="Auto,*" Margin="20">
+    <Grid RowDefinitions="75,*" Margin="20">
 
         <!-- HEADER BAR -->
         <Grid Grid.Row="0"
-              ColumnDefinitions="*,*,*"
+              ColumnDefinitions="*,2*,*"
               VerticalAlignment="Center"
               Margin="0,0,0,16">
 
@@ -22,8 +22,8 @@
 
             <!-- CENTER TITLE -->
             <TextBlock Grid.Column="1"
-                       Text="Logs"
-                       FontSize="56"
+                       Text="{Binding PageTitle}"
+                       FontSize="48"
                        FontWeight="SemiBold"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center" />
@@ -34,10 +34,6 @@
                         Spacing="10"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center">
-                <Button Classes="GateButton"
-                        Content="Export"
-                        HorizontalAlignment="Center"
-                        Command="{Binding ExportLogsCommand}" />
             </StackPanel>
         </Grid>
 

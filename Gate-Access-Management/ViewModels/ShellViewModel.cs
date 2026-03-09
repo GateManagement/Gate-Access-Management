@@ -1,26 +1,28 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Gate_Access_Management.ViewModels.Pages;
-using Gate_Access_Management.ViewModels.Pages.Garages;
-using Gate_Access_Management.ViewModels.Pages.Users;
+using Gate_Access_Management.ViewModels.Pages.Units;
+using Gate_Access_Management.ViewModels.Pages.Reports;
+using Gate_Access_Management.ViewModels.Pages.Setup;
+using Gate_Access_Management.ViewModels.Pages.Tenants;
 
 namespace Gate_Access_Management.ViewModels;
 
 public partial class ShellViewModel : ViewModelBase
 {
     private readonly LogsViewModel _logs = new();
-    private readonly UserHostViewModel _users = new();
-    private readonly GarageHostViewModel _garages = new();
+    private readonly TenantHostViewModel _tenants = new();
+    private readonly UnitHostViewModel _units = new();
     private readonly GateViewModel _gate = new();
-    private readonly ReportsViewModel _reports = new();
-    private readonly SetupViewModel _setup = new();
+    private readonly ReportHostViewModel _reports = new();
+    private readonly SetupHostViewModel _setup = new();
     private readonly HelpViewModel _help = new();
 
     [ObservableProperty] private ViewModelBase _currentPage;
 
     [ObservableProperty] private bool _isLogsSelected;
-    [ObservableProperty] private bool _isUsersSelected;
-    [ObservableProperty] private bool _isGaragesSelected;
+    [ObservableProperty] private bool _isTenantsSelected;
+    [ObservableProperty] private bool _isUnitsSelected;
     [ObservableProperty] private bool _isGateSelected;
     [ObservableProperty] private bool _isReportsSelected;
     [ObservableProperty] private bool _isSetupSelected;
@@ -35,16 +37,16 @@ public partial class ShellViewModel : ViewModelBase
     private void SelectOnly(string name)
     {
         IsLogsSelected = false;
-        IsUsersSelected = false;
-        IsGaragesSelected = false;
+        IsTenantsSelected = false;
+        IsUnitsSelected = false;
         IsGateSelected = false;
         IsReportsSelected = false;
         IsSetupSelected = false;
         IsHelpSelected = false;
 
         if (name == nameof(IsLogsSelected)) IsLogsSelected = true;
-        if (name == nameof(IsUsersSelected)) IsUsersSelected = true;
-        if (name == nameof(IsGaragesSelected)) IsGaragesSelected = true;
+        if (name == nameof(IsTenantsSelected)) IsTenantsSelected = true;
+        if (name == nameof(IsUnitsSelected)) IsUnitsSelected = true;
         if (name == nameof(IsGateSelected)) IsGateSelected = true;
         if (name == nameof(IsReportsSelected)) IsReportsSelected = true;
         if (name == nameof(IsSetupSelected)) IsSetupSelected = true;
@@ -59,17 +61,19 @@ public partial class ShellViewModel : ViewModelBase
     }
 
     [RelayCommand]
-    private void ShowUsers()
+    private void ShowTenants()
     {
-        CurrentPage = _users;
-        SelectOnly(nameof(IsUsersSelected));
+        _tenants.ShowDefault();
+        CurrentPage = _tenants;
+        SelectOnly(nameof(IsTenantsSelected));
     }
 
     [RelayCommand]
-    private void ShowGarages()
+    private void ShowUnits()
     {
-        CurrentPage = _garages;
-        SelectOnly(nameof(IsGaragesSelected));
+        _units.ShowDefault();
+        CurrentPage = _units;
+        SelectOnly(nameof(IsUnitsSelected));
     }
 
     [RelayCommand]
@@ -82,6 +86,7 @@ public partial class ShellViewModel : ViewModelBase
     [RelayCommand]
     private void ShowReports()
     {
+        _reports.ShowDefault();
         CurrentPage = _reports;
         SelectOnly(nameof(IsReportsSelected));
     }
@@ -89,6 +94,7 @@ public partial class ShellViewModel : ViewModelBase
     [RelayCommand]
     private void ShowSetup()
     {
+        _setup.ShowDefault();
         CurrentPage = _setup;
         SelectOnly(nameof(IsSetupSelected));
     }

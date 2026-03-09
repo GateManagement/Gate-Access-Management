@@ -1,8 +1,8 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:vm="using:Gate_Access_Management.ViewModels.Pages"
-             x:Class="Gate_Access_Management.Views.Pages.HelpView"
-             x:DataType="vm:HelpViewModel">
+             xmlns:vm="using:Gate_Access_Management.ViewModels.Pages.Units"
+             x:Class="Gate_Access_Management.Views.Pages.Units.UnitHostView"
+             x:DataType="vm:UnitHostViewModel">
 
     <Grid RowDefinitions="75,*" Margin="20">
 
@@ -18,11 +18,14 @@
                         Spacing="10"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center">
+                <Button Classes="BackButton"
+                        Command="{Binding ShowListCommand}"
+                        IsVisible="{Binding ShowBackButton}" />
             </StackPanel>
 
             <!-- CENTER TITLE -->
             <TextBlock Grid.Column="1"
-                       Text="{Binding PageTitle}"
+                       Text="{Binding CurrentView.PageTitle}"
                        FontSize="48"
                        FontWeight="SemiBold"
                        HorizontalAlignment="Center"
@@ -34,7 +37,10 @@
                         Spacing="10"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center">
-
+                <Button Classes="ActionButton"
+                        Content="Create Unit"
+                        Command="{Binding ShowCreateCommand}"
+                        IsVisible="{Binding ShowCreateButton}" />
             </StackPanel>
         </Grid>
 
@@ -45,9 +51,7 @@
                 BorderThickness="2"
                 CornerRadius="14"
                 Padding="24">
-
-            <!-- Page stuff here -->
-
+            <ContentControl Content="{Binding CurrentView}" />
         </Border>
     </Grid>
 </UserControl>

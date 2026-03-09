@@ -4,11 +4,11 @@
              x:Class="Gate_Access_Management.Views.Pages.GateView"
              x:DataType="vm:GateViewModel">
 
-    <Grid RowDefinitions="Auto,*" Margin="20">
+    <Grid RowDefinitions="75,*" Margin="20">
 
         <!-- HEADER BAR -->
         <Grid Grid.Row="0"
-              ColumnDefinitions="*,*,*"
+              ColumnDefinitions="*,2*,*"
               VerticalAlignment="Center"
               Margin="0,0,0,16">
 
@@ -22,8 +22,8 @@
 
             <!-- CENTER TITLE -->
             <TextBlock Grid.Column="1"
-                       Text="Gate"
-                       FontSize="56"
+                       Text="{Binding PageTitle}"
+                       FontSize="48"
                        FontWeight="SemiBold"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center" />
@@ -54,17 +54,17 @@
                     <TextBlock Text="Entry Gate" FontSize="34" FontWeight="SemiBold" HorizontalAlignment="Center" />
 
                     <StackPanel Spacing="12" Margin="0,8,0,0">
-                        <Button Classes="GateButton"
+                        <Button Classes="OptionButton"
                                 Content="Open"
                                 HorizontalAlignment="Center"
                                 Command="{Binding OpenEntryGateCommand}" />
 
-                        <Button Classes="GateButton"
+                        <Button Classes="OptionButton"
                                 Content="Close"
                                 HorizontalAlignment="Center"
                                 Command="{Binding CloseEntryGateCommand}" />
 
-                        <Button Classes="GateButton"
+                        <Button Classes="OptionButton"
                                 Content="Hold Open"
                                 HorizontalAlignment="Center"
                                 Command="{Binding HoldOpenEntryGateCommand}" />
@@ -76,17 +76,17 @@
                     <TextBlock Text="Exit Gate" FontSize="34" FontWeight="SemiBold" HorizontalAlignment="Center" />
 
                     <StackPanel Spacing="12" Margin="0,8,0,0">
-                        <Button Classes="GateButton"
+                        <Button Classes="OptionButton"
                                 Content="Open"
                                 HorizontalAlignment="Center"
                                 Command="{Binding OpenExitGateCommand}" />
 
-                        <Button Classes="GateButton"
+                        <Button Classes="OptionButton"
                                 Content="Close"
                                 HorizontalAlignment="Center"
                                 Command="{Binding CloseExitGateCommand}" />
 
-                        <Button Classes="GateButton"
+                        <Button Classes="OptionButton"
                                 Content="Hold Open"
                                 HorizontalAlignment="Center"
                                 Command="{Binding HoldOpenExitGateCommand}" />

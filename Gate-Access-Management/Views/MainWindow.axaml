@@ -3,50 +3,55 @@
         xmlns:vm="using:Gate_Access_Management.ViewModels"
         x:Class="Gate_Access_Management.Views.MainWindow"
         x:DataType="vm:ShellViewModel"
-        Width="1600" Height="900"
+        Width="1366" Height="768"
+        MinWidth="1366" MinHeight="768"
         Title="Gate Access Management">
 
     <Grid ColumnDefinitions="Auto,*">
-        <Border Grid.Column="0" Background="#141414" Padding="25">
-            <StackPanel Spacing="20">
-                <ToggleButton Classes="ShellNavigationButton"
+        <Border Grid.Column="0"
+                Background="#181818"
+                BorderBrush="#2A2A2A"
+                BorderThickness="0,0,1,0"
+                Padding="25">
+            <StackPanel Spacing="15">
+                <ToggleButton Classes="ShellToggleButton"
                               Content="Logs"
                               IsChecked="{Binding IsLogsSelected, Mode=OneWay}"
                               Command="{Binding ShowLogsCommand}" />
 
-                <ToggleButton Classes="ShellNavigationButton"
-                              Content="Users"
-                              IsChecked="{Binding IsUsersSelected, Mode=OneWay}"
-                              Command="{Binding ShowUsersCommand}" />
+                <ToggleButton Classes="ShellToggleButton"
+                              Content="Tenants"
+                              IsChecked="{Binding IsTenantsSelected, Mode=OneWay}"
+                              Command="{Binding ShowTenantsCommand}" />
 
-                <ToggleButton Classes="ShellNavigationButton"
-                              Content="Garages"
-                              IsChecked="{Binding IsGaragesSelected, Mode=OneWay}"
-                              Command="{Binding ShowGaragesCommand}" />
+                <ToggleButton Classes="ShellToggleButton"
+                              Content="Units"
+                              IsChecked="{Binding IsUnitsSelected, Mode=OneWay}"
+                              Command="{Binding ShowUnitsCommand}" />
 
-                <ToggleButton Classes="ShellNavigationButton"
+                <ToggleButton Classes="ShellToggleButton"
                               Content="Gate"
                               IsChecked="{Binding IsGateSelected, Mode=OneWay}"
                               Command="{Binding ShowGateCommand}" />
 
-                <ToggleButton Classes="ShellNavigationButton"
+                <ToggleButton Classes="ShellToggleButton"
                               Content="Reports"
                               IsChecked="{Binding IsReportsSelected, Mode=OneWay}"
                               Command="{Binding ShowReportsCommand}" />
 
-                <ToggleButton Classes="ShellNavigationButton"
+                <ToggleButton Classes="ShellToggleButton"
                               Content="Setup"
                               IsChecked="{Binding IsSetupSelected, Mode=OneWay}"
                               Command="{Binding ShowSetupCommand}" />
 
-                <ToggleButton Classes="ShellNavigationButton"
+                <ToggleButton Classes="ShellToggleButton"
                               Content="Help"
                               IsChecked="{Binding IsHelpSelected, Mode=OneWay}"
                               Command="{Binding ShowHelpCommand}" />
             </StackPanel>
         </Border>
 
-        <Border Grid.Column="1" Background="#0F0F0F" Padding="16">
+        <Border Grid.Column="1" Background="#121212" Padding="16, 0, 16, 16">
             <ContentControl Content="{Binding CurrentPage}" />
         </Border>
     </Grid>
