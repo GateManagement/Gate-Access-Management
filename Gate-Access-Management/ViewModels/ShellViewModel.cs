@@ -19,7 +19,7 @@ public partial class ShellViewModel : ViewModelBase
     [ObservableProperty] private ViewModelBase _currentPage;
 
     [ObservableProperty] private bool _isLogsSelected;
-    [ObservableProperty] public bool _isTenantsSelected;
+    [ObservableProperty] private bool _isTenantsSelected;
     [ObservableProperty] private bool _isGaragesSelected;
     [ObservableProperty] private bool _isGateSelected;
     [ObservableProperty] private bool _isReportsSelected;
@@ -35,7 +35,7 @@ public partial class ShellViewModel : ViewModelBase
     private void SelectOnly(string name)
     {
         IsLogsSelected = false;
-        IsUsersSelected = false;
+        IsTenantsSelected = false;
         IsGaragesSelected = false;
         IsGateSelected = false;
         IsReportsSelected = false;
@@ -43,7 +43,7 @@ public partial class ShellViewModel : ViewModelBase
         IsHelpSelected = false;
 
         if (name == nameof(IsLogsSelected)) IsLogsSelected = true;
-        if (name == nameof(IsUsersSelected)) IsUsersSelected = true;
+        if (name == nameof(IsTenantsSelected)) IsTenantsSelected = true;
         if (name == nameof(IsGaragesSelected)) IsGaragesSelected = true;
         if (name == nameof(IsGateSelected)) IsGateSelected = true;
         if (name == nameof(IsReportsSelected)) IsReportsSelected = true;
@@ -59,10 +59,10 @@ public partial class ShellViewModel : ViewModelBase
     }
 
     [RelayCommand]
-    private void ShowUsers()
+    private void ShowTenants()
     {
         CurrentPage = _users;
-        SelectOnly(nameof(IsUsersSelected));
+        SelectOnly(nameof(IsTenantsSelected));
     }
 
     [RelayCommand]
