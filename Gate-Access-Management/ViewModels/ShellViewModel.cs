@@ -19,7 +19,7 @@ public partial class ShellViewModel : ViewModelBase
     [ObservableProperty] private ViewModelBase _currentPage;
 
     [ObservableProperty] private bool _isLogsSelected;
-    [ObservableProperty] private bool _isUsersSelected;
+    [ObservableProperty] public bool _isTenantsSelected;
     [ObservableProperty] private bool _isGaragesSelected;
     [ObservableProperty] private bool _isGateSelected;
     [ObservableProperty] private bool _isReportsSelected;

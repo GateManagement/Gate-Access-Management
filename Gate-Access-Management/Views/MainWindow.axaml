@@ -15,9 +15,9 @@
                               Command="{Binding ShowLogsCommand}" />
 
                 <ToggleButton Classes="ShellNavigationButton"
-                              Content="Users"
-                              IsChecked="{Binding IsUsersSelected, Mode=OneWay}"
-                              Command="{Binding ShowUsersCommand}" />
+                              Content="Tenants"
+                              IsChecked="{Binding IsTenantsSelected, Mode=OneWay}"
+                              Command="{Binding ShowTenantsCommand}" />
 
                 <ToggleButton Classes="ShellNavigationButton"
                               Content="Garages"
