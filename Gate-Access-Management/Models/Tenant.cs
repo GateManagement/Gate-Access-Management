@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Gate_Access_Management.Models;
 
-public class User
+public class Tenant
 {
-    [Key] public int UserId { get; set; }
+    [Key] public int TenantId { get; set; }
 
     [Required]
     [StringLength(50)]
@@ -22,49 +22,56 @@ public class User
     [DataType(DataType.PhoneNumber)]
     [Phone]
     [Display(Name = "Phone Number")]
-    public string PhoneNumber { get; set; } = string.Empty;
-
-    [StringLength(100)]
-    [Display(Name = "Address")]
-    public string? Address { get; set; }
-
-    [StringLength(50)]
-    [Display(Name = "State")]
-    public string? State { get; set; }
+    public string Phone { get; set; } = string.Empty;
 
     [EmailAddress]
     [Display(Name = "Email")]
     [StringLength(100)]
     public string? Email { get; set; }
 
+    [StringLength(100)]
+    [Display(Name = "Address")]
+    public string? Address { get; set; }
+
+    [StringLength(50)]
+    [Display(Name = "City")]
+    public string? City { get; set; }
+
+    [StringLength(50)]
+    [Display(Name = "State")]
+    public string? State { get; set; }
+
+    [StringLength(10)]
+    [Display(Name = "Zip Code")]
+    public string? ZipCode { get; set; }
+
     [Required]
     [DataType(DataType.Password)]
     [StringLength(100, MinimumLength = 4)]
-    public string UserPin { get; set; } = string.Empty;
+    public string AccessCode { get; set; } = string.Empty;
+
+    public AccessScheduled? AccessScheduledId { get; set; } = new AccessScheduled();
+
+    [Display(Name = "Is Gate Access Enabled")] public bool IsGateAccessEnabled { get; set; } = true;
+
+    [Display(Name = "Is Enabled")] public bool IsEnabled { get; set; } = true;
 
     [DataType(DataType.DateTime)]
     [Display(Name = "Created On")]
     public DateTime CreatedOn { get; set; } = DateTime.Now;
 
     [DataType(DataType.DateTime)]
-    [Display(Name = "Vacated On")]
-    public DateTime? VacatedOn { get; set; }
+    [Display(Name = "Updated On")]
+    public DateTime? UpdatedOn { get; set; }
 
     [Display(Name = "Is Deleted")] public bool IsUserDeleted { get; set; } = false;
-
-    [DataType(DataType.DateTime)]
-    [Display(Name = "Modified On")]
-    public DateTime? ModifiedOn { get; set; }
 
     [DataType(DataType.DateTime)]
     [Display(Name = "Last User Entrance")]
     public DateTime? LastUserEntrance { get; set; }
 
-    [DataType(DataType.DateTime)]
-    [Display(Name = "Last User Payment")]
-    public DateTime? LastUserPayment { get; set; }
-
-    [Display(Name = "Is Disabled")] public bool IsDisabled { get; set; } = false;
-
-    public ICollection<Garage> Garages { get; set; } = new List<Garage>();
+    [DataType(DataType.Text)]
+    [Display(Name = "Notes")]
+    [StringLength(int.MaxValue)]
+    public string? Notes { get; set; } = string.Empty;
 }

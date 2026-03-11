@@ -2,11 +2,12 @@
 
 namespace Gate_Access_Management.Models;
 
-public class Garage
+public class Unit
 {
-    [Key] public int GarageId { get; set; }
+    [Key] public int UnitId { get; set; }
 
-    [Required] public int GarageBuilding { get; set; }
+    [DataType(DataType.Password)]
+    []
 
     // [Required]
     // public User User { get; set; }

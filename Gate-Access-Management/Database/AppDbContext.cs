@@ -5,8 +5,8 @@ namespace Gate_Access_Management.Database;
 
 public class AppDbContext : DbContext
 {
-    public DbSet<User> Users { get; set; }
-    public DbSet<Garage> Garages { get; set; }
+    public DbSet<Tenant> Users { get; set; }
+    public DbSet<Unit> Garages { get; set; }
     public DbSet<GaragePreset> GaragePresets { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
