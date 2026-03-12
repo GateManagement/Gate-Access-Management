@@ -4,6 +4,14 @@
     <option name="projectPerEditor">
       <map>
         <entry key="Gate-Access-Management/Views/MainWindow.axaml" value="Gate-Access-Management/Gate-Access-Management.csproj" />
+        <entry key="Gate-Access-Management/Views/Pages/Garages/GarageCreateView.axaml" value="Gate-Access-Management/Gate-Access-Management.csproj" />
+        <entry key="Gate-Access-Management/Views/Pages/Garages/GarageDetailsView.axaml" value="Gate-Access-Management/Gate-Access-Management.csproj" />
+        <entry key="Gate-Access-Management/Views/Pages/Garages/GarageHostView.axaml" value="Gate-Access-Management/Gate-Access-Management.csproj" />
+        <entry key="Gate-Access-Management/Views/Pages/SetupView.axaml" value="Gate-Access-Management/Gate-Access-Management.csproj" />
+        <entry key="Gate-Access-Management/Views/Pages/Users/UserCreateView.axaml" value="Gate-Access-Management/Gate-Access-Management.csproj" />
+        <entry key="Gate-Access-Management/Views/Pages/Users/UserDetailsView.axaml" value="Gate-Access-Management/Gate-Access-Management.csproj" />
+        <entry key="Gate-Access-Management/Views/Pages/Users/UserHostView.axaml" value="Gate-Access-Management/Gate-Access-Management.csproj" />
+        <entry key="Gate-Access-Management/Views/Pages/Users/UserListView.axaml" value="Gate-Access-Management/Gate-Access-Management.csproj" />
       </map>
     </option>
   </component>

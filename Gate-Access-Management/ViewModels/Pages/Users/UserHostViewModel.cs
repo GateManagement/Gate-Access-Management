@@ -16,6 +16,10 @@ public partial class UserHostViewModel : ViewModelBase
     {
         _currentView = List;
     }
+    public void GoToMain()
+    {
+        CurrentView = List;
+    }
 
     [RelayCommand]
     private void ShowList() => CurrentView = List;

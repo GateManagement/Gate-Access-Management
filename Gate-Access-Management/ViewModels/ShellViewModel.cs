@@ -61,6 +61,7 @@ public partial class ShellViewModel : ViewModelBase
     [RelayCommand]
     private void ShowTenants()
     {
+        _users.GoToMain();
         CurrentPage = _users;
         SelectOnly(nameof(IsTenantsSelected));
     }
