@@ -4,10 +4,141 @@
              x:Class="Gate_Access_Management.Views.Pages.Tenants.TenantCreateView"
              x:DataType="vm:TenantCreateViewModel">
 
-    <TextBlock Text="TenantCreateView"
-               FontSize="56"
-               FontWeight="SemiBold"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Center" />
-    
+    <Grid Margin="20">
+        <StackPanel Spacing="20">
+
+            <!-- Page Title -->
+            <TextBlock Text="Create Tenant"
+                       HorizontalAlignment="Center"
+                       FontSize="36"
+                       FontWeight="SemiBold" />
+
+            <!-- Main Form Container -->
+            <Border 
+                    Padding="30">
+
+                <StackPanel Spacing="20">
+
+                    <!-- Row 1 -->
+                    <Grid ColumnDefinitions="*,*,*,*" ColumnSpacing="20">
+                        <StackPanel Grid.Column="0" Spacing="6">
+                            <TextBlock Text="First Name" HorizontalAlignment="Center"/>
+                            <TextBox Height="40"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1" Spacing="6">
+                            <TextBlock Text="Last Name" HorizontalAlignment="Center"/>
+                            <TextBox Height="40"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="2" Spacing="6">
+                            <TextBlock Text="Phone" HorizontalAlignment="Center"/>
+                            <TextBox Height="40"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="3" Spacing="6">
+                            <TextBlock Text="Email" HorizontalAlignment="Center"/>
+                            <TextBox Height="40"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <!-- Row 2 -->
+                    <Grid ColumnDefinitions="2*,1*,0.6*,0.8*" ColumnSpacing="20">
+                        <StackPanel Grid.Column="0" Spacing="6">
+                            <TextBlock Text="Address" HorizontalAlignment="Center"/>
+                            <TextBox Height="40"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1" Spacing="6">
+                            <TextBlock Text="City" HorizontalAlignment="Center"/>
+                            <TextBox Height="40"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="2" Spacing="6">
+                            <TextBlock Text="State" HorizontalAlignment="Center"/>
+                            <ComboBox Height="40"
+                                      SelectedIndex="0">
+                                <ComboBoxItem Content="NE"/>
+                                <ComboBoxItem Content="IA"/>
+                                <ComboBoxItem Content="KS"/>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="3" Spacing="6">
+                            <TextBlock Text="ZIP" HorizontalAlignment="Center"/>
+                            <TextBox Height="40"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <!-- Row 3 -->
+                    <Grid ColumnDefinitions="*,*,*,*" ColumnSpacing="20">
+                        <StackPanel Grid.Column="0" Spacing="6">
+                            <TextBlock Text="Access Code" HorizontalAlignment="Center"/>
+                            <TextBox Height="40"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1" Spacing="6">
+                            <TextBlock Text="Access Schedule" HorizontalAlignment="Center"/>
+                            <ComboBox Height="40"
+                                      SelectedIndex="0">
+                                <ComboBoxItem Content="24/7"/>
+                                <ComboBoxItem Content="9 AM - 5 PM"/>
+                                <ComboBoxItem Content="Extended Hours"/>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="2" Spacing="6">
+                            <TextBlock Text="Created" HorizontalAlignment="Center"/>
+                            <TextBox Height="40" IsReadOnly="True"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="3" Spacing="6">
+                            <TextBlock Text="Last Modified" HorizontalAlignment="Center"/>
+                            <TextBox Height="40" IsReadOnly="True"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <!-- Bottom Section -->
+                    <Grid ColumnDefinitions="2*,1*" ColumnSpacing="40">
+
+                        <!-- Notes -->
+                        <StackPanel Grid.Column="0" Spacing="6">
+                            <TextBlock Text="Notes" HorizontalAlignment="Center"/>
+                            <TextBox Height="160"
+                                     AcceptsReturn="True"
+                                     TextWrapping="Wrap"/>
+                        </StackPanel>
+
+                        <!-- Right Controls -->
+                        <StackPanel Grid.Column="1"
+                                    VerticalAlignment="Stretch"
+                                    Spacing="20">
+
+                            <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Center"
+                                        Spacing="30">
+                                <StackPanel Spacing="6">
+                                    <TextBlock Text="Locked" HorizontalAlignment="Center"/>
+                                    <CheckBox HorizontalAlignment="Center"/>
+                                </StackPanel>
+
+                                <StackPanel Spacing="6">
+                                    <TextBlock Text="Disabled" HorizontalAlignment="Center"/>
+                                    <CheckBox HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <Button Content="Create Tenant"
+                                    Height="70"
+                                    FontSize="20"
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Bottom"/>
+                        </StackPanel>
+
+                    </Grid>
+
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
 </UserControl>
