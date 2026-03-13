@@ -5,9 +5,13 @@ namespace Gate_Access_Management.Database;
 
 public class AppDbContext : DbContext
 {
-    public DbSet<User> Users { get; set; }
-    public DbSet<Garage> Garages { get; set; }
-    public DbSet<GaragePreset> GaragePresets { get; set; }
+    public DbSet<AccessLog> AccessLogs { get; set; }
+    public DbSet<AccessSchedule> AccessSchedules { get; set; }
+    public DbSet<DaysScheduled> DaysScheduled { get; set; }
+    public DbSet<Rental> Rentals { get; set; }
+    public DbSet<Tenant> Tenants { get; set; }
+    public DbSet<Unit> Units { get; set; }
+    public DbSet<UnitType> UnitTypes { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
